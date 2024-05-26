@@ -1,48 +1,47 @@
-import React from "react";
-import Button from "./Button";
-import "../styles/FormInput.css";
+import React from "react"
+import Button from "./Button"
+import "../styles/FormInput.css"
 
-class FormInput extends React.Component {
+class FormInput extends React.Component{
+
     state ={
         text:""
     }
 
     //fungsi untuk menghandle saat even change
     change = e => {
-        this.setState({text: e.target.value})
+        this.setState({ text:e.target.value})
     }
 
-    //fungsi submit
+   //fungsi submit
     submit = e => {
-        e.preventDefault();
-        if (this.state.text !== "") {
-            this.props.add(this.state.text);
+        e.preventDefault()
+        if(this.state.text !== ""){
+            this.props.add(this.state.text)
         }
         this.setState({
             text: ""
-        });
+        })
     }
 
-    render() {
+
+    render(){
         return(
             <form style={inputForm} onSubmit={this.submit}>
-                <input
-                    type="text"
-                    onChange={this.change}
-                    value={this.state.text}
-                    style={input}
-                    placeholder="Add Task"
-                />
-
+                <input 
+                     type="text"
+                     onChange={this.change}
+                     value={this.state.text}
+                     style={input}
+                     placeholder="add task"
+                 /> 
                 <Button text="add" variant="primary" action={this.submit}/>
             </form>
-        );
+        )
     }
 }
 
-export default FormInput;
-
-const inputForm= {
+const inputForm ={
     background:"#fff",
     color:"#fff",
     display:"flex",
@@ -51,9 +50,14 @@ const inputForm= {
     padding:"0 1rem",
     justifyContent:"space-between",
     margin:"0.5rem 0"
+
 }
 
-const input= {
+const input ={
+
     width:"70%",
     border:"none",
+    
 }
+
+export default FormInput;

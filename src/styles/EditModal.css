@@ -22,7 +22,7 @@
 }
 
 .modal-box h3 {
-    color:#94d2ff;
+    color:#2da4fb;
 }
 
 .modal-box .input{
@@ -44,7 +44,7 @@
     }
 
     to {
-        transition: cubic-bezier();
-
+       transition: cubic-bezier();
+      
     }
 }
